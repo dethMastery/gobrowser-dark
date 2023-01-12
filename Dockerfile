@@ -3,7 +3,7 @@ MAINTAINER xataz <https://github.com/xataz>
 
 ENV LISTEN=0.0.0.0:5000 \
     WEBROOT="" \
-    PATH_FILE="/home" \
+    PATH_FILE="/files" \
     HIDDEN_FILE=false \
     FORCE_URL="" \
     FORCE_SSL=false \
@@ -20,7 +20,7 @@ RUN apk add --no-cache go \
 	&& cd /app/gobrowser \
         && go build app.go \
 	&& apk del --no-cache go musl-dev \
-	&& chmod +x /app/gobrowser/startup 
+	&& chmod +x /app/gobrowser/startup
 
 EXPOSE 5000
 
