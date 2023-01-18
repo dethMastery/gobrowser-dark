@@ -1,7 +1,6 @@
 FROM xataz/alpine:3.7
-MAINTAINER xataz <https://github.com/xataz>
 
-ENV LISTEN=0.0.0.0:5000 \
+ENV LISTEN=0.0.0.0:1980 \
   WEBROOT="" \
   PATH_FILE="/files" \
   HIDDEN_FILE=false \
@@ -22,6 +21,6 @@ RUN apk add --no-cache go \
 && apk del --no-cache go musl-dev \
 && chmod +x /app/gobrowser/startup
 
-EXPOSE 5000
+EXPOSE 1980
 
 CMD ["/app/gobrowser/startup"]
